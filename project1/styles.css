@@ -46,7 +46,26 @@ height: 509px;
 background: rgba(248, 248, 248, 1);
 }
 
-.columns-selector {
+h1 {
+    display: flex;
+    padding: 24px;
+    margin: 0;
+
+    /* палочка
+        background-image: url(./pics/highlight-stick.svg);
+        background-repeat: no-repeat;
+        color: rgba(27, 28, 33, 1);
+       */
+
+
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    text-align: left;
+}
+
+.main__about__columns-selector {
     white-space: nowrap;
     overflow: auto;
 }
@@ -65,24 +84,6 @@ border: 2px solid rgba(184, 255, 236, 1);
 border-radius: 6px;
 }
 
-h1 {
-    display: flex;
-    padding: 24px;
-    margin: 0;
-
-/* палочка
-    background-image: url(./pics/highlight-stick.svg);
-    background-repeat: no-repeat;
-    color: rgba(27, 28, 33, 1);
-   */
-
-
-font-size: 28px;
-font-weight: 700;
-line-height: 40px;
-letter-spacing: -0.6px;
-text-align: left;
-}
 
 
 
