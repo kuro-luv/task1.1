@@ -21,12 +21,12 @@ header {
 
 .header__left-icons {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .header__middle-icons {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .header__right-icons {
@@ -42,6 +42,8 @@ header {
 button {
     background: transparent;
     border: 0;
+    padding: 0;
+    font-family: inherit;
 }
 
 /*MAIN*/
@@ -79,7 +81,7 @@ p {
     color: rgba(27, 28, 33, 1);
     font-size: 14px;
     font-weight: 400;
-    line-height: 18px;
+    line-height: 20px;
 }
 
 .nav__list {
@@ -97,6 +99,7 @@ p {
     color: rgba(126, 126, 130, 1);
     font-size: 16px;
     font-weight: 500;
+    line-height: 24px;
     padding: 8px 16px;
     border-radius: 6px;
 }
@@ -131,7 +134,7 @@ p {
     background-position: center left;
 }
 
-.header__1120px_hidden {
+.header__pc_hidden {
     display: flex;
 }
 
@@ -143,9 +146,12 @@ p {
 /*МЕДИАЗАПРОСЫ*/
 
 @media (max-width: 767px) {
+    .header__left-icons__divider {
+        display: none;
+    }
+
     .header__right-icons__repair-text,
-    .header__right-icons__status-text,
-    .header__right-icons__divider {
+    .header__right-icons__status-text {
         display: none;
     }
 
@@ -163,6 +169,10 @@ p {
         padding: 24px 16px 16px 16px;
     }
 
+    p {
+        line-height: 18px;
+    }
+
     .main__content__company-photo {
         display: flex;
         justify-content: center;
@@ -172,8 +182,8 @@ p {
         height: 176px;
     }
 
-    .main__content__text__768px,
-    .main__content__text__1120px {
+    .main__content__text__tablet,
+    .main__content__text__pc {
         display: none;
     }
 
@@ -181,7 +191,6 @@ p {
         margin-top: 16px;
         margin-left: 8.29px;
     }
-
 }
 
 @media (min-width: 767px) {
@@ -196,17 +205,17 @@ p {
 
     .header__left-icons {
         display: flex;
-        gap: 1rem;
+        gap: 16px;
     }
 
     .header__middle-icons {
         display: flex;
-        gap: 1rem;
+        gap: 16px;
     }
 
     .header__right-icons {
         display: flex;
-        gap: 1rem;
+        gap: 16px;
     }
 
     h1 {
@@ -250,11 +259,11 @@ p {
 }
 
 @media (max-width: 1119px) {
-    .main__content__text__1120px {
+    .main__content__text__pc {
         display: none;
     }
 
-    .header__1120px__right-icons_hidden {
+    .header__pc__right-icons_hidden {
         display: none;
     }
 }
@@ -264,7 +273,7 @@ p {
         display: none;
     }
 
-    .header__1120px_hidden {
+    .header__pc_hidden {
         display: flex;
         padding-top: 42px;
         justify-content: space-between;
@@ -274,23 +283,25 @@ p {
         padding: 0 0 0 32px;
     }
 
-    .header__1120px__right-icons_hidden {
+    .header__pc__right-icons_hidden {
         display: flex;
         align-self: center;
-        padding: 0 32px;
-        gap: 1rem;
+        padding-right: 32px;
+        gap: 32px;
     }
 
-    .header__1120px__right-icons__divider {
+    .header__pc__right-icons__divider {
         display: none;
     }
 
-    .header__1120px__right-icons__repair {
+    .header__pc__right-icons__repair {
         display: flex;
+        gap: 8px;
     }
 
-    .header__1120px__right-icons__status {
+    .header__pc__right-icons__status {
         display: flex;
+        gap: 9px;
     }
 
     .nav__list {
@@ -308,8 +319,8 @@ p {
         display: none;
     }
 
-    .header__1120px__right-icons__repair__text,
-    .header__1120px__right-icons__status__text {
+    .header__pc__right-icons__repair__text,
+    .header__pc__right-icons__status__text {
         display: flex;
         align-items: center;
         color: rgba(27, 28, 33, 1);
