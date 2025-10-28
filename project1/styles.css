@@ -8,30 +8,33 @@ body {
     margin: 0;
 }
 
+/*ХЕДЕР*/
+
 header {
-    background: rgba(255, 255, 255, 1);
     display: flex;
+    height: 88px;
     justify-content: space-between;
     align-items: center;
     padding: 24px 16px;
+    background: rgba(255, 255, 255, 1);
 }
 
-.left-icons {
+.header__left-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header__middle-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header__right-icons {
     display: flex;
     gap: 1rem;
 }
 
-.middle-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.right-icons {
-    display: flex;
-    gap: 1rem;
-}
-
-.middle-and-right-icons {
+.header__middle-icons-and-right-icons {
     display: flex;
     gap: 1rem;
 }
@@ -41,57 +44,30 @@ button {
     border: 0;
 }
 
+/*MAIN*/
 
-
-
-
-
-
-
-
-                                /*MAIN*/
-main {
+.main {
     display: flex;
     flex-direction: column;
     background: rgba(248, 248, 248, 1);
-    border: 2px solid red;
-
 }
 
-.content {
+.main__content {
     display: flex;
-    margin-top: 24px;
-
 }
 
-.column-text {
-    padding: 0 16px;
-    gap: 16px;
-    border: solid 2px lawngreen;
-
-}
-
-.column-photo {
-    display: flex;
-    justify-content: center;
-    border: solid 2px lawngreen;
-    margin-top: 16px;
-    margin-bottom: 35px;
-}
-
-.main__img__company-photo {
-    min-width: 320px;
+.main__content__company-photo__image {
+    width: 100%;
+    height: 100%;
 }
 
 h1 {
     display: flex;
-    padding: 24px 16px;
     margin: 0;
+    padding: 24px 0 24px 16px;
     font-size: 28px;
     font-weight: 700;
     line-height: 40px;
-    letter-spacing: -0.6px;
-
     background-image: url(./pics/highlight-stick.svg);
     background-repeat: no-repeat;
     background-position: center left;
@@ -104,10 +80,9 @@ p {
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
-    letter-spacing: 0.2px;
 }
 
-ul {
+.nav__list {
     margin: 0;
     padding-left: 16px;
     display: flex;
@@ -115,14 +90,15 @@ ul {
     list-style-type: none;
     white-space: nowrap;
     overflow: scroll;
-    gap: 16px;
+    flex-wrap: nowrap;
 }
 
-li {
+.nav__list__li {
     color: rgba(126, 126, 130, 1);
     font-size: 16px;
     font-weight: 500;
-
+    padding: 8px 16px;
+    border-radius: 6px;
 }
 
 .active {
@@ -131,141 +107,238 @@ li {
     border-radius: 6px;
 }
 
-.main__about__about-us__read-more {
+.nav__list::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 24px;
+    height: 40px;
+    background: linear-gradient(270.00deg, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0) 100%);
+}
+
+
+.main__content__text__read-more {
     display: flex;
-    padding-left: 16px;
+    padding: 0 0 0 16px;
     color: rgba(27, 28, 33, 1);
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    letter-spacing: -0.2px;
-    margin-top: 16px;
-
+    /*letter-spacing: -0.2px;*/
+    /*Ёлочка*/
     background-image: url(./pics/icon-readmore.svg);
     background-repeat: no-repeat;
-    color: rgba(27, 28, 33, 1);
     background-position: center left;
+}
+
+.header__1120px_hidden {
+    display: flex;
+}
+
+.main__content__company-photo__image {
+    width: 100%;
+    height: 100%;
 }
 
 /*МЕДИАЗАПРОСЫ*/
 
 @media (max-width: 767px) {
-    header {
-        font-size: 14px;
-    }
-
-    .header__column2__icon-repair__text,
-    .header__column2__icon-checkstatus__text,
-    .header__magic-stick-icon-menu {
+    .header__right-icons__repair-text,
+    .header__right-icons__status-text,
+    .header__right-icons__divider {
         display: none;
     }
 
-    .middle-icons {
+    .header__middle-icons {
         display: none;
     }
 
-    .content {
+    .main__content {
         flex-direction: column;
         overflow: hidden;
+        padding-bottom: 35px;
     }
 
-    .column-photo {
+    .main__content__text {
+        padding: 24px 16px 16px 16px;
+    }
+
+    .main__content__company-photo {
+        display: flex;
         justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 320px;
+        height: 176px;
     }
 
-    .column-text__part2,
-    .column-text__part3 {
+    .main__content__text__768px,
+    .main__content__text__1120px {
         display: none;
+    }
+
+    .main__content__text__read-more {
+        margin-top: 16px;
+        margin-left: 8.29px;
     }
 
 }
 
 @media (min-width: 767px) {
     header {
-        font-size: 14px;
+        padding: 24px 24px 24px 24px;
     }
 
-    .header__column2__icon-repair__text,
-    .header__column2__icon-checkstatus__text {
+    .header__right-icons__repair-text,
+    .header__right-icons__status-text {
         display: none;
     }
 
+    .header__left-icons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .header__middle-icons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .header__right-icons {
+        display: flex;
+        gap: 1rem;
+    }
+
     h1 {
+        padding: 24px 0 24px 24px;
+    }
+
+    .nav__list {
+        margin-top: 8px;
         padding-left: 24px;
     }
 
-    .content {
-        display: flex;
+    .main__content {
         gap: 48px;
-        justify-content: space-between;
-        padding: 0 24px;
-        margin-bottom: 40px;
-        margin-top: 32px;
+        padding: 32px 25px 40px 24px;
     }
 
-    .content-text {
-        flex-grow: 1;
+    .main__content__text {
+        padding-bottom: 14px;
     }
 
-    .column-photo {
-        flex-grow: 1;
-        margin-top: 0;
-    }
-
-    .main__img__company-photo {
-        object-fit: cover;
-        width: 360px;
+    .main__content__company-photo {
+        min-width: 360px;
         height: 208px;
-        padding-top: 26px;
-        padding-bottom: 25.66px;
+    }
+
+    .main__content__company-photo__image {
+        object-fit: cover;
         border-radius: 6px;
         background: rgba(248, 248, 248, 1);
     }
 
-    .main__about__about-us {
+    .main__content__text__all-resolution {
         color: rgba(27, 28, 33, 1);
         line-height: 20px;
     }
 
-    .main__about__about-us__read-more {
+    .main__content__text__read-more {
+        margin-top: 10px;
+        margin-left: 9.29px;
     }
 }
 
 @media (max-width: 1119px) {
-    .column-text__part3 {
+    .main__content__text__1120px {
+        display: none;
+    }
+
+    .header__1120px__right-icons_hidden {
         display: none;
     }
 }
 
 @media (min-width: 1120px) {
     header {
-        font-size: 14px;
-        justify-content: right;
-    }
-
-    .left-icons,
-    .middle-icons {
         display: none;
     }
 
-    .header__column2__icon-repair__text,
-    .header__column2__icon-checkstatus__text {
+    .header__1120px_hidden {
         display: flex;
-        align-items: center;
+        padding-top: 42px;
+        justify-content: space-between;
     }
 
-    .main__about__about-us {
-        width: 490px;
+    h1 {
+        padding: 0 0 0 32px;
+    }
 
+    .header__1120px__right-icons_hidden {
+        display: flex;
+        align-self: center;
+        padding: 0 32px;
+        gap: 1rem;
+    }
+
+    .header__1120px__right-icons__divider {
+        display: none;
+    }
+
+    .header__1120px__right-icons__repair {
+        display: flex;
+    }
+
+    .header__1120px__right-icons__status {
+        display: flex;
+    }
+
+    .nav__list {
+        margin-top: 8.37px;
+        padding-left: 32px;
+        flex-wrap: wrap;
+        color: rgba(126, 126, 130, 1);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .header__left-icons,
+    .header__middle-icons {
+        display: none;
+    }
+
+    .header__1120px__right-icons__repair__text,
+    .header__1120px__right-icons__status__text {
+        display: flex;
+        align-items: center;
+        color: rgba(27, 28, 33, 1);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .main__content {
+        gap: 36px;
+        justify-content: space-between;
+        padding: 16.22px 28.65px 49px 34px;
+    }
+
+    .main__content__company-photo {
+        width: 531.35px;
+        height: 307px;
+    }
+
+    .main__content__text__all-resolution {
+        width: 490px;
         color: rgba(27, 28, 33, 1);
         line-height: 20px;
     }
 
-    .main__img__company-photo {
-        width: 531px;
+    .main__content__text__read-more {
+        margin-top: 13.78px;
+        margin-left: 6.29px;
     }
-
-
 }
 
 /*Шрифты*/
